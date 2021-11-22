@@ -1,4 +1,4 @@
-# postcss-px-to-viewport-with-minViewportWidth
+# postcss-px-to-viewport-with-minviewportwidth
 
 A plugin for [PostCSS](https://github.com/postcss/postcss) that generates viewport units (vw, vh, vmin, vmax) from pixel units.
 
