@@ -1,5 +1,4 @@
-# postcss-px-to-viewport
-[![NPM version](https://badge.fury.io/js/postcss-px-to-viewport.svg)](http://badge.fury.io/js/postcss-px-to-viewport)
+# postcss-px-to-viewport-with-minViewp
 
 [English](README.md) | 中文
 

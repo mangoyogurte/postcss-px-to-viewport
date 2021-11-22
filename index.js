@@ -152,9 +152,16 @@ function createPxReplace(opts, viewportUnit, viewportSize) {
   return function (m, $1) {
     if (!$1) return m;
     var pixels = parseFloat($1);
-    if (pixels <= opts.minPixelValue) return m;
+    if (Math.abs(pixels) <= opts.minPixelValue) return m;
     var parsedVal = toFixed((pixels / viewportSize * 100), opts.unitPrecision);
-    return parsedVal === 0 ? '0' : parsedVal + viewportUnit;
+    var pxReplace
+    if (opts.minViewportWidth) {
+      var method = parsedVal < 0 ? 'min' : 'max'
+      pxReplace = method + '(' + parsedVal * opts.minViewportWidth / 100 + 'px,' + parsedVal + viewportUnit + ')'
+    } else {
+      pxReplace = parsedVal + viewportUnit
+    }
+    return parsedVal === 0 ? '0' : pxReplace;
   };
 }
 
